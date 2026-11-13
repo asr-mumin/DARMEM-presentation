@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DARMEN — презентация</title>
+<style>
+:root{--bg:#031014;--b:#0B7F8C;--b2:#14B8C4;--ac:#F26B4E;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0;background:var(--bg);font-family:Manrope,"Segoe UI",Roboto,system-ui,sans-serif}
+body{display:flex;align-items:center;justify-content:center}
+#st{container-type:size;position:relative;width:min(100vw,177.78vh);aspect-ratio:16/9;overflow:hidden;background:radial-gradient(90cqw 70cqh at 80% 10%,#0e5f6b,#07262d 60%,#031014);color:#e8fbfc;user-select:none;cursor:pointer}
+.orb{position:absolute;border-radius:50%;filter:blur(5cqw);opacity:.5;animation:ob 14s ease-in-out infinite}
+.o1{width:30cqw;height:30cqw;left:-8cqw;top:-8cqw;background:#14B8C4}.o2{width:26cqw;height:26cqw;right:-6cqw;bottom:-10cqw;background:#F26B4E;opacity:.28;animation-delay:-5s}
+@keyframes ob{50%{transform:translate(6cqw,4cqw) scale(1.2)}}
+#vw{position:absolute;inset:0;perspective:140cqw}
+.sc{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 6cqw 5cqw;opacity:0;pointer-events:none;transform:translateX(40cqw) rotateY(-55deg) scale(.8);filter:blur(1cqw);transition:transform 1.3s cubic-bezier(.2,.8,.2,1),opacity 1s,filter 1.2s;transform-style:preserve-3d}
+.sc.on{opacity:1;transform:none;filter:none}.sc.out{transform:translateX(-40cqw) rotateY(55deg) scale(.8)}
+.tx{width:38cqw}.tx h2{font-size:3.3cqw;line-height:1.12;margin:0 0 1.6cqw}.tx h2 em{font-style:normal;color:var(--b2)}
+.tx li{font-size:1.6cqw;line-height:1.35;margin:0 0 1cqw;list-style:none;padding-left:2.2cqw;position:relative;color:#c4e6ea}.tx ul{margin:0;padding:0}
+.tx li::before{content:"✦";position:absolute;left:0;color:var(--ac)}.tx p{font-size:1.8cqw;color:#a9d3d8;margin:1cqw 0}
+.lg{font-size:9cqw;font-weight:900;letter-spacing:.6cqw;background:linear-gradient(90deg,#fff,#14B8C4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vs{width:50cqw;height:38cqw;display:flex;align-items:center;justify-content:center;position:relative;transform-style:preserve-3d}
+.a{opacity:0;transform:translateY(3cqw)}
+.on .a{opacity:1;transform:none;transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(.5s + var(--i,0)*.22s)}
+.out .a{opacity:1;transform:none;transition:none}
+/* 3D карта */
+.m3{width:44cqw;height:30cqw;position:relative;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-22deg);animation:mf 10s ease-in-out infinite}
+@keyframes mf{50%{transform:rotateX(46deg) rotateZ(-12deg) translateZ(1.5cqw)}}
+.m3>svg{position:absolute;inset:0;width:100%;height:100%;border-radius:1cqw;box-shadow:0 3cqw 7cqw rgba(0,0,0,.65),0 0 0 .3cqw #fff3}
+.pn{position:absolute;transform-origin:50% 100%;transform:translate(-50%,-100%) rotateZ(22deg) rotateX(-55deg);opacity:0;color:var(--c,#0B7F8C)}
+.on .pn{animation:dr .8s cubic-bezier(.3,1.4,.5,1) both;animation-delay:calc(1s + var(--i)*.18s)}
+@keyframes dr{from{opacity:0;transform:translate(-50%,-100%) translateZ(9cqw) rotateZ(22deg) rotateX(-55deg)}to{opacity:1;transform:translate(-50%,-100%) rotateZ(22deg) rotateX(-55deg)}}
+.pn svg{display:block;width:2.8cqw;height:3.9cqw;filter:drop-shadow(0 .3cqw .3cqw #0007)}.pn svg path{fill:currentColor;stroke:#fff;stroke-width:2}.pn svg circle{fill:#fff}
+.pl{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);margin-bottom:.1cqw;white-space:nowrap;background:#fff;color:#0E2A33;border:.2cqw solid var(--c);border-radius:1cqw;padding:0 .8cqw;font:800 1.3cqw/2cqw sans-serif}
+.pn.f .pl{background:var(--c);color:#fff}
+.sq i{display:grid;place-items:center;width:2.4cqw;height:2.4cqw;border-radius:.5cqw;background:var(--c);color:#fff;font:800 1.5cqw sans-serif;border:.25cqw solid #fff;font-style:normal;box-shadow:0 .3cqw .6cqw #0006}
+.sq.r{--c:#D93A3A}.sq.c{--c:#2F6BFF}.sq.p{--c:#0B7F8C}.sq i{border-radius:50%}.sq.r i,.sq.c i{border-radius:.5cqw}
+.ok{--c:#1B8A5A}.off{--c:#8A9BA3}.near{--c:#F26B4E}
+.me{position:absolute;width:2cqw;height:2cqw;margin:-1cqw;border-radius:50%;background:#2F6BFF;border:.3cqw solid #fff;opacity:0}.on .me{opacity:1;transition:opacity .5s .6s}
+.me::after{content:"";position:absolute;inset:-.3cqw;border-radius:50%;border:.25cqw solid #2F6BFF;animation:pl 2s ease-out infinite}
+@keyframes pl{to{transform:scale(4.5);opacity:0}}
+.rt{stroke-dasharray:1;stroke-dashoffset:1}.on .rt{animation:rd 2.4s 3.2s ease-in-out forwards}@keyframes rd{to{stroke-dashoffset:0}}
+.sear{position:absolute;left:0;top:-5.5cqw;background:#fff;color:#0E2A33;border-radius:1.2cqw;padding:.9cqw 1.6cqw;font-size:1.7cqw;font-weight:700;box-shadow:0 1cqw 2cqw #0006;white-space:nowrap}
+.sear::after{content:"|";animation:bk 1s steps(1) infinite}@keyframes bk{50%{opacity:0}}
+/* карточки */
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw;width:46cqw;transform-style:preserve-3d;animation:gf 9s ease-in-out infinite}
+@keyframes gf{0%,100%{transform:rotateY(-14deg) rotateX(6deg)}50%{transform:rotateY(12deg) rotateX(2deg) translateY(-1cqw)}}
+.cd{background:linear-gradient(160deg,#ffffff16,#ffffff06);border:.12cqw solid #ffffff30;border-radius:1.6cqw;padding:1.8cqw;backdrop-filter:blur(1cqw);transform:rotateY(100deg);opacity:0}
+.on .cd{transform:none;opacity:1;transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity .6s;transition-delay:calc(.6s + var(--i)*.25s)}.out .cd{transform:none;opacity:1;transition:none}
+.cd b{display:block;font-size:2.2cqw;margin-bottom:.5cqw}.cd span{font-size:1.4cqw;color:#b4dde1;line-height:1.35;display:block}.cd i{font-style:normal;font-size:3.6cqw;display:block;margin-bottom:.6cqw}
+/* 3D кубик и логотип */
+.cube{width:13cqw;height:13cqw;position:relative;transform-style:preserve-3d;animation:rc 14s linear infinite}
+@keyframes rc{from{transform:rotateX(-18deg) rotateY(0)}to{transform:rotateX(-18deg) rotateY(360deg)}}
+.cube div{position:absolute;inset:0;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#0B7F8Cdd,#14B8C4bb);border:.2cqw solid #fff6;border-radius:1.4cqw;font-size:1.5cqw;font-weight:800;box-shadow:inset 0 0 3cqw #fff3}.cube div i{font-style:normal;font-size:4.5cqw;display:block}
+.cr{width:22cqw;height:22cqw;position:relative;transform-style:preserve-3d;animation:cs 9s ease-in-out infinite}
+@keyframes cs{0%,100%{transform:rotateY(-35deg) rotateX(12deg)}50%{transform:rotateY(35deg) rotateX(-8deg)}}
+.cr i{position:absolute;left:50%;top:50%;border-radius:1cqw;background:linear-gradient(135deg,#14B8C4,#0B7F8C)}
+.rg{position:absolute;width:30cqw;height:30cqw;border:.25cqw dashed #14B8C4aa;border-radius:50%;transform:rotateX(72deg);animation:rr 12s linear infinite}@keyframes rr{to{transform:rotateX(72deg) rotate(360deg)}}
+/* управление */
+#sub{position:absolute;left:8cqw;right:8cqw;bottom:6.4cqw;text-align:center;font-size:1.55cqw;line-height:1.35;color:#fff;text-shadow:0 .1cqw .5cqw #000;z-index:5;pointer-events:none}
+#tb{position:absolute;left:0;bottom:0;height:.45cqw;background:var(--b2);width:0;z-index:6}@keyframes tb{to{width:100%}}
+#bar{position:absolute;left:0;right:0;bottom:.9cqw;display:flex;align-items:center;justify-content:center;gap:1cqw;z-index:7}
+#bar button{background:#ffffff1f;color:#fff;border:0;border-radius:50%;width:3.2cqw;height:3.2cqw;font-size:1.4cqw;cursor:pointer}
+#pg{display:flex;gap:.6cqw;position:absolute;bottom:0;left:0;right:0;height:.45cqw;z-index:8}#pg i{flex:1;background:#ffffff35;cursor:pointer}#pg i.d{background:#14B8C488}#pg i.c{background:#14B8C4}
+#cn{font-size:1.2cqw;color:#9cc;min-width:5cqw;text-align:center}
+.vol-wrap{display:flex;align-items:center;background:#ffffff1f;border-radius:50cqw;padding:0 .8cqw;height:3.2cqw}
+#vol{width:5vw;max-width:70px;cursor:pointer;accent-color:var(--b2)}
+#go{position:absolute;inset:0;z-index:9;background:radial-gradient(70cqw 50cqw at 50% 40%,#0e5f6bf0,#031014f5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6cqw;text-align:center}
+#go p{margin:0;font-size:1.7cqw;color:#a9d3d8}#gb{background:var(--ac);color:#fff;border:0;border-radius:99cqw;padding:1.3cqw 4cqw;font-size:2.2cqw;font-weight:800;cursor:pointer;box-shadow:0 1cqw 3cqw #F26B4E66}
+.btn-site{display:inline-block;background:var(--ac);color:#fff;text-decoration:none;padding:1.2cqw 3cqw;border-radius:99cqw;font-size:1.8cqw;font-weight:800;box-shadow:0 .8cqw 2cqw #F26B4E66;margin-top:1.5cqw;transition:transform .2s}
+.btn-site:hover{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.m3,.gr,.cube,.cr,.rg,.orb{animation:none}}
+</style></head><body>
+<div id="st"><div class="orb o1"></div><div class="orb o2"></div><div id="vw"></div><div id="sub"></div><div id="pg"></div>
+<div id="bar">
+  <button id="bp" aria-label="Назад">⏮</button>
+  <button id="bt" aria-label="Пауза">⏸</button>
+  <button id="bn" aria-label="Вперёд">⏭</button>
+  <button id="bm" aria-label="Звук эффектов">🔊</button>
+  <div class="vol-wrap"><input type="range" id="vol" min="0" max="1" step="0.05" value="0.35"></div>
+  <button id="bs" aria-label="Музыка">🎵</button>
+  <button id="bf" aria-label="Во весь экран">⛶</button>
+  <span id="cn"></span>
+</div>
+<div id="tb"></div>
+<div id="go"><div class="lg">DARMEN</div><p>Презентация сайта · карта лекарств, больниц и врачей</p><button id="gb">▶ Смотреть</button><p id="vn" style="font-size:1.2cqw"></p></div></div>
+<script>
+const $=s=>document.querySelector(s);
+let bd="";for(let i=0;i<14;i++)for(let j=0;j<10;j++)if((i*7+j*13)%5<3&&!(i==6||i==7))bd+=`<rect x="${12+i*27}" y="${10+j*27}" width="${13+(i*j)%8}" height="${11+(i+j)%7}"/>`;
+const rd=(v,c,w)=>[0,1,2,3,4].map(k=>`<path d="${v?`M${60+k*70} 0V280`:`M0 ${40+k*55}H400`}" stroke="${c}" stroke-width="${w}"/>`).join("");
+const MAP=`<svg viewBox="0 0 400 280"><rect width="400" height="280" fill="#f2efe9"/><g fill="#d9d0c9" stroke="#c4b7ab" stroke-width=".5">${bd}</g><g fill="#c8facc"><rect x="14" y="14" width="86" height="62" rx="3"/><rect x="262" y="190" width="120" height="74"/></g><rect x="296" y="14" width="86" height="70" fill="#add19e"/><g fill="none" stroke-linecap="round">${rd(1,"#fff",5)}${rd(0,"#fff",5)}<path d="M0 150C80 118 140 190 220 150S340 112 400 142" stroke="#aad3df" stroke-width="16"/><path d="M200 0V280M0 95H400" stroke="#d9a35e" stroke-width="10"/><path d="M200 0V280M0 95H400" stroke="#fcd6a4" stroke-width="8"/></g><g font-size="9" font-weight="700" fill="#444" stroke="#fff" stroke-width="2.4" paint-order="stroke"><text x="212" y="45">Достык</text><text x="30" y="92">Абая</text><text x="270" y="108">Аль-Фараби</text></g>`;
+const pin=(x,y,c,l,i,f)=>`<div class="pn ${c}${f?" f":""}" style="left:${x}%;top:${y}%;--i:${i}">${l?`<b class="pl">${l}</b>`:""}<svg viewBox="0 0 30 42"><path d="M15 2C7.5 2 2 7.6 2 14.7 2 24.600 15 40 15 40s13-15.400 13-25.300C28 7.600 22.500 2 15 2z"/><circle cx="15" cy="14.500" r="6"/></svg></div>`;
+const sq=(x,y,c,t,i)=>`<div class="pn sq ${c}" style="left:${x}%;top:${y}%;--i:${i}"><i>${t}</i></div>`;
+const A=(c,i)=>`<div class="a" style="--i:${i}">${c}</div>`;
+let cr="";for(let k=-4;k<=4;k++)cr+=`<i style="width:7cqw;height:22cqw;margin:-11cqw 0 0 -3.5cqw;transform:translateZ(${k*.55}cqw);filter:brightness(${.65+(k+4)*.05})"></i><i style="width:22cqw;height:7cqw;margin:-3.5cqw 0 0 -11cqw;transform:translateZ(${k*.55}cqw);filter:brightness(${.65+(k+4)*.05})"></i>`;
+const face=(n,e,t)=>`<div style="transform:rotateY(${n*90}deg) translateZ(6.5cqw)"><span><i>${e}</i>${t}</span></div>`;
+
+/* Все 8 слайдов (по 24 секунды каждый, 6-й слайд перенесен на конец) */
+const S=[
+{d:24000,say:"DARMEN — карта здоровья Казахстана. Лекарства, больницы, лаборатории и донорство — всё рядом с вами, на одной карте.",
+h:`<div class="tx">${A('<div class="lg">DARMEN</div>',0)}${A('<p>Здоровье — рядом. Ищите лекарства, больницы и врачей на реальной карте города.</p>',1)}${A('<ul><li>16 городов Казахстана</li><li>Русский · Қазақша · English</li></ul>',2)}</div><div class="vs"><div class="rg"></div><div class="cr">${cr}</div></div>`},
+{d:24000,say:"В разделе «Лекарства» введите название, например Нурофен. На карте сразу видно ближайшую аптеку, где лекарство есть, а где нет, и цены. Нажмите на аптеку — откроется её ассортимент и маршрут.",
+h:`<div class="tx">${A('<h2>Лекарства: <em>где есть и почём</em></h2>',0)}<ul>${["Поиск по названию и быстрые подсказки","Зелёные метки — есть, серые — нет в наличии","Цены, самая низкая цена и ближайшая аптека","Окно аптеки: все лекарства и маршрут"].map((t,k)=>`<li class="a" style="--i:${k+1}">${t}</li>`).join("")}</ul></div><div class="vs"><div class="sear">🔍 Нурофен</div><div class="m3">${MAP}<path class="rt" pathLength="1" d="M0 0"/></svg>${[[30,38,"ok","1 910 ₸",0],[62,26,"ok","1 890 ₸",1],[74,66,"off","нет",2],[20,72,"off","нет",3],[46,64,"near","1 700 ₸",4,1]].map(p=>pin(...p)).join("")}<div class="me" style="left:40%;top:52%"></div></div></div>`},
+{d:24000,say:"Раздел «Больницы»: больницы, поликлиники и аптеки вокруг вас. Фильтры, поиск по названию, телефон, график работы и маршрут пешком или на машине.",
+h:`<div class="tx">${A('<h2>Больницы <em>рядом с вами</em></h2>',0)}<ul>${["Красные — больницы, синие — поликлиники","Телефон, адрес и график работы","Маршрут пешком или на машине","«Моё местоположение» и выбор точки на карте"].map((t,k)=>`<li class="a" style="--i:${k+1}">${t}</li>`).join("")}</ul></div><div class="vs"><div class="m3">${MAP.replace('<path class="rt"','')}<svg viewBox="0 0 400 280" style="position:absolute;inset:0;width:100%;height:100%"><path class="rt" pathLength="1" d="M160 150L160 95L270 95L270 60" fill="none" stroke="#0B7F8C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>${[[62,22,"r","H",0],[22,30,"r","H",1],[78,60,"c","+",2],[34,76,"c","+",3],[50,34,"p","+",4],[16,56,"p","+",5],[70,80,"p","+",6]].map(p=>sq(...p)).join("")}<div class="me" style="left:40%;top:54%"></div></div></div>`},
+{d:24000,say:"Те же возможности — для лабораторий, диагностики, стоматологии и диспансеров: цены на услуги, онлайн-запись и результаты анализов.",
+h:`<div class="tx">${A('<h2>Врачи и <em>диагностика</em></h2>',0)}${A('<p>Каждый раздел — со своей картой, фильтрами по услугам и ценами.</p>',1)}${A('<ul><li>Запись онлайн и мои результаты</li><li>Сортировка: ближе или дешевле</li></ul>',2)}</div><div class="vs"><div class="gr">${[["🧪","Лаборатории","Анализы, цены, запись и результаты"],["◉","Диагностика","МРТ · КТ · УЗИ · рентген"],["🦷","Стоматология","Чистка, пломба, имплант"],["⚕","Диспансеры","Психоневрологические, онко, ТБ"]].map((c,k)=>`<div class="cd" style="--i:${k}"><i>${c[0]}</i><b>${c[1]}</b><span>${c[2]}</span></div>`).join("")}</div></div>`},
+{d:24000,say:"Донорство: объявления по группам крови. Сайт работает на трёх языках, в шестнадцати городах, определяет ваше местоположение и поддерживает тёмную тему.",
+h:`<div class="tx">${A('<h2>Донорство и <em>удобство</em></h2>',0)}<ul>${["🩸 Объявления доноров по группам крови","🌐 Три языка: RU · KK · EN","📍 Автоопределение геолокации","🌙 Светлая и тёмная темы"].map((t,k)=>`<li class="a" style="--i:${k+1}">${t}</li>`).join("")}</ul></div><div class="vs"><div class="cube">${face(0,"🩸","Донорство")}${face(1,"🌐","3 языка")}${face(2,"📍","Геолокация")}${face(3,"🌙","Тёмная тема")}</div></div>`},
+{d:24000,say:"Современный интерфейс, актуальные данные аптек и больниц, быстрый поиск и полная адаптивность под любые устройства.",
+h:`<div class="tx">${A('<h2>Почему выбирают <em>DARMEN</em>?</h2>',0)}<ul>${["Мгновенный поиск лекарств по городам Казахстана","Точные маршруты к больницам и клиникам","Удобно на телефоне, планшете и ПК","Постоянные обновления и полезные сервисы"].map((t,k)=>`<li class="a" style="--i:${k+1}">${t}</li>`).join("")}</ul></div><div class="vs"><div class="cube">${face(0,"💊","Лекарства")}${face(1,"🏥","Больницы")}${face(2,"🧪","Анализы")}${face(3,"⭐","Сервис")}</div></div>`},
+{d:24000,say:"Оцените все преимущества платформы DARMEN прямо сейчас в режиме реального времени на нашем официальном сайте.",
+h:`<div class="tx" style="width:100%;text-align:center">${A('<h2 style="font-size:3.8cqw">Попробуйте прямо сейчас</h2>',0)}${A('<p style="font-size:2.2cqw">Перейдите по ссылке, чтобы воспользоваться интерактивной картой здоровья.</p>',1)}${A('<a href="https://asr-mumin.github.io/DARMEN2/" target="_blank" class="btn-site">Открыть сайт DARMEN 🚀</a>',2)}</div>`},
+{d:24000,say:"DARMEN. Здоровье — рядом. Спасибо за внимание!",
+h:`<div class="tx" style="width:100%;text-align:center">${A('<div class="lg" style="font-size:10cqw">DARMEN</div>',0)}${A('<p style="font-size:2.4cqw">Ваш надежный помощник в мире здоровья</p>',1)}${A('<a href="https://asr-mumin.github.io/DARMEN2/" target="_blank" class="btn-site">Перейти на сайт 🌐</a>',2)}</div>`}
+];
+
+$('#vw').innerHTML=S.map(s=>`<section class="sc">${s.h}</section>`).join('');
+const sc=[...document.querySelectorAll('.sc')];$('#pg').innerHTML=S.map((_,k)=>`<i data-k="${k}"></i>`).join('');
+let i=-1,paused=false,muted=false,mOn=true,tk=0,timerId=null,AC=null,MG=null;
+
+const bgm=new Audio('https://zvukogram.com/mp3/cats/1322/digital-vibrations_88309.mp3');
+bgm.loop=true;
+bgm.preload='auto';
+bgm.volume=0.35;
+
+function ai(){if(AC)return;try{AC=new(window.AudioContext||window.webkitAudioContext)();MG=AC.createGain();MG.gain.value=.14;MG.connect(AC.destination)}catch(e){AC=null}}
+function tone(f,t,d,v,ty){const o=AC.createOscillator(),g=AC.createGain();o.type=ty||'sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.06);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(MG);o.start(t);o.stop(t+d+.05)}
+function mus(on){if(on){bgm.play().catch(()=>{})}else{bgm.pause()}}
+
+$('#vol').oninput=e=>{
+  const val = e.target.value;
+  bgm.volume = val;
+  if(MG) MG.gain.value = val * 0.4;
+};
+
+$('#bs').onclick=e=>{e.stopPropagation();mOn=!mOn;$('#bs').textContent=mOn?'🎵':'🔕';mus(mOn)};
+
+function whoosh(){
+  if(!AC||!mOn||muted)return;
+  const t=AC.currentTime,n=Math.floor(AC.sampleRate*1.2),b=AC.createBuffer(1,n,AC.sampleRate),d=b.getChannelData(0);
+  for(let k=0;k<n;k++)d[k]=Math.random()*2-1;
+  const s=AC.createBufferSource();s.buffer=b;const f=AC.createBiquadFilter();f.type='bandpass';f.Q.value=1.2;
+  f.frequency.setValueAtTime(400,t);f.frequency.exponentialRampToValueAtTime(3500,t+.6);f.frequency.exponentialRampToValueAtTime(600,t+1.2);
+  const g=AC.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.5,t+.4);g.gain.linearRampToValueAtTime(0,t+1.2);
+  s.connect(f);f.connect(g);g.connect(MG);s.start(t);tone(1318.5,t+.45,1.2,.5);tone(1760,t+.6,1.4,.35);
+}
+
+function clearTimer(){if(timerId)clearTimeout(timerId);}
+
+function show(n){
+  if(n<0)n=0;
+  if(n>=S.length){end();return;}
+  const pv=sc[i];
+  if(pv){
+    pv.classList.remove('on');
+    pv.classList.add('out');
+    setTimeout(()=>pv.classList.remove('out'),1300);
+    whoosh();
+  }
+  i=n;const k=++tk;
+  clearTimer();
+  sc[i].classList.add('on');
+  $('#sub').textContent=S[i].say;
+  [...$('#pg').children].forEach((e,j)=>e.className=j<i?'d':j==i?'c':'');
+  $('#cn').textContent=(i+1)+' / '+S.length;
+  const b=$('#tb');b.style.animation='none';void b.offsetWidth;
+  b.style.animation='tb '+S[i].d+'ms linear forwards';
+  
+  if(!paused){
+    timerId=setTimeout(()=>{if(k==tk)show(i+1);},S[i].d);
+  }
+}
+
+function end(){
+  clearTimer();
+  $('#gb').textContent='↻ Смотреть снова';
+  mus(false);
+  $('#go').style.display='flex';
+  sc[i]&&sc[i].classList.remove('on');
+  i=-1;
+  $('#sub').textContent='';
+}
+
+$('#gb').onclick=e=>{
+  e.stopPropagation();
+  ai();
+  if(AC&&AC.state=='suspended')AC.resume();
+  mus(mOn);
+  $('#go').style.display='none';
+  paused=false;
+  $('#bt').textContent='⏸';
+  show(0);
+};
+
+function tog(){
+  if(i<0)return;
+  paused=!paused;
+  $('#bt').textContent=paused?'▶':'⏸';
+  $('#tb').style.animationPlayState=paused?'paused':'running';
+  if(AC)paused?AC.suspend():AC.resume();
+  mus(!paused&&mOn);
+  if(paused){
+    clearTimer();
+  }else{
+    show(i);
+  }
+}
+
+$('#bt').onclick=e=>{e.stopPropagation();tog();};
+$('#st').onclick=()=>{if($('#go').style.display!='none'&&i<0)return;tog();};
+$('#bp').onclick=e=>{e.stopPropagation();if(i>=0)show(i-1);};
+$('#bn').onclick=e=>{e.stopPropagation();if(i>=0)show(i+1);};
+
+$('#bm').onclick=e=>{
+  e.stopPropagation();
+  muted=!muted;
+  $('#bm').textContent=muted?'🔇':'🔊';
+  if(MG) MG.gain.value = muted ? 0 : $('#vol').value * 0.4;
+};
+
+$('#pg').onclick=e=>{
+  e.stopPropagation();
+  const k=e.target.dataset.k;
+  if(k!=null&&i>=0)show(+k);
+};
+
+$('#bf').onclick=e=>{
+  e.stopPropagation();
+  document.fullscreenElement?document.exitFullscreen():$('#st').requestFullscreen&&$('#st').requestFullscreen();
+};
+
+document.onkeydown=e=>{
+  if(e.key==' '){e.preventDefault();tog();}
+  if(e.key=='ArrowRight'&&i>=0)show(i+1);
+  if(e.key=='ArrowLeft'&&i>=0)show(i-1);
+};
+
+let x0=0;
+$('#st').addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+$('#st').addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50&&i>=0)show(d<0?i+1:i-1)});
+</script></body></html>
